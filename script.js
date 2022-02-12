@@ -58,12 +58,12 @@ class CustomSelect {
     let text = target.textContent;
     CustomSelect.selectedValue = {id, text};
     e.currentTarget.closest('[id="wraper"]').querySelector('span').textContent = text;
-    // e.currentTarget.closest('[id="wraper"]').querySelector('ul').classList.remove('active');
     let list = e.currentTarget.closest('[id="wraper"]').querySelector('ul').children
     for(let item of list){
       item.classList.remove('selected');
     }
     target.classList.add('selected');
+    e.currentTarget.closest('[id="wraper"]').querySelector('ul').classList.remove('active');
     console.log(CustomSelect.selectedValue);
   }
 }
